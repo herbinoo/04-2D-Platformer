@@ -307,9 +307,6 @@ script = ExtResource( 4 )
 
 [node name="Enemy_Flying" parent="Enemy_Container" instance=ExtResource( 5 )]
 position = Vector2( 1216, 160 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Coin_Container" type="Node2D" parent="."]
 

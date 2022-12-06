@@ -7,8 +7,7 @@ export var looking_speed = 100
 export var damage = 25
 	
 func _physics_process(_delta):
-	if player != null:
-		player = get_node_or_null("/root/Game/Player_Container/Player")
+	player = get_node_or_null("/root/Game/Player_Container/Player")
 	if player != null:
 		ray.cast_to = ray.to_local(player.global_position)
 		var c = ray.get_collider()
