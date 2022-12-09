@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Levels/Portal.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player_Container.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Enemy/Enemy_Ground.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Enemy/Enemy_Flying.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Coin/Coin.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Friends.wav" type="AudioStream" id=10]
 
 [sub_resource type="TileSet" id=1]
 0/name = "spritesheet_default.png 0"
@@ -279,6 +280,11 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 
 [node name="Game" type="Node2D"]
 
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 2238.0
+margin_bottom = 638.0
+color = Color( 0.27451, 0.537255, 0.870588, 1 )
+
 [node name="Background" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
 collision_layer = 0
@@ -405,5 +411,9 @@ text = "Health
 "
 align = 1
 valign = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+autoplay = true
 
 [connection signal="body_entered" from="Portal_to_4" to="Portal_to_4" method="_on_Portal_entered"]
